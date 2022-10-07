@@ -1,13 +1,27 @@
-Introduction/Background: A quick introduction of your topic and mostly literature review of what has been done in this area. You can briefly explain your dataset and its features here too.
+Team 14 Project Proposal
 
-Problem definition: Why there is a problem here or what is the motivation of the project?
+Introduction & Background
+	Our team has decided to use machine learning techniques to analyze the “Credit Card Fraud Detection” Kaggle dataset. Credit card fraud is a rampant problem. In 2020, the Federal Trade Commision identified credit cards as the prevalent payment method in fraud reports. Also, with a one-year jump of 44.6% between 2019 and 2020 according to the Federal Trade Commission's annual 2020 report, credit card fraud is a growing problem whose root causes should be addressed to mitigate these frauds. Existing analyses of credit card fraud have included techniques including Deep Learning/Entropy, correlation matrices, and confusion matrices. While some of these applications might be useful for our dataset, we must consider its characteristics: few fraudulent entries, no null values, and high false positive/negative rate. We found all this information after preliminary analysis after pre-preprocessing our data .
 
-Methods: What algorithms or methods are you going to use to solve the problems. (Note: Methods may change when you start implementing them which is fine). Students are encouraged to use existing packages and libraries (i.e. scikit-learn) instead of coding the algorithms from scratch.
 
-Potential results and Discussion (The results may change while you are working on the project and it is fine; that's why it is called research). A good way to talk about potental results is to discuss about what type of quantitative metrics your team plan to use for the project (i.e. ML Metrics).
+Problem Definition
+  According to Experian, credit card CVV’s sell on the dark web for as little as $5. Moreover, people’s entire credit information - including name, Social Security number, date of birth, and complete account numbers - sell for as low as $110. In a digitally financial age with an increasingly susceptible aged population, it is more important now than ever to have sophisticated fraud detection techniques to protect people’s livelihoods. Our project focuses on the detection of credit card fraud through analysis of various PCA transformed components.
 
-At least three references (preferably peer reviewed). You need to properly cite the references on your proposal. This part does NOT count towards word limit.
+Dataset
+  After scouring kaggle, we found this dataset to suit our purpose: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud. It contains anonymized credit card transactions labeled as either fraudulent or genuine. It presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced - the positive class (frauds) account for 0.172% of all transactions.
 
-Add proposed timeline from start to finish and list each project members' responsibilities. Fall and Spring semester sample Gantt Chart. This part does NOT count towards word limit.
+Methods
+  As of now, we plan to detect fraud in a few ways: via (1) GMM clustering, (2) regression analysis, and (3) a multi-layer perceptron neural network. GMM, an unsupervised learning clustering algorithm, results in a soft-clustering output that we can compare against the dataset’s labeled output to determine the model’s accuracy. Regression analysis (either linear, logistic, or both) can be used to identify the correlation between the input parameters and fraudulence. Finally, a well-tuned MLP neural network for classification will likely serve as the basis of comparison.
 
-A contribution table with all group members' names that explicitly provides the contribution of each member in preparing the project task.This part does NOT count towards word limit.
+
+Potential Results & Discussion
+  From literature review, we discussed that Precision, Recall, F-score, and AUC would be the most suitable metrics for the unbalanced nature of our dataset. Specifically, for GMM, we plan to use the specificity, recall, and Balanced Accuracy of GMM. For regression analysis, we aim to use a straightforward mean squared or root squared error. Lastly, for MLP, we plan to use recall, precision and F-1 score. The area under the precision-recall curve (AUPRC) is also a useful performance metric in our problem setting since we care a lot about finding the positive examples.
+
+
+References
+https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+https://www.cardrates.com/advice/credit-card-fraud-statistics/
+https://mint.intuit.com/blog/planning/credit-card-fraud-statistics/
+https://statmodeling.stat.columbia.edu/2020/01/10/linear-or-logistic-regression-with-binary-outcomes
+https://glassboxmedicine.com/2019/03/02/measuring-performance-auprc/#:~:text=The%20area%20under%20the%20precision,about%20finding%20the%20positive%20examples
+
