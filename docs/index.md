@@ -1,3 +1,7 @@
+---
+title: Project Proposal
+---
+
 ## Introduction & Background
 This is an increasing problem around the globe. Financial Fraud Action UK, for example, a trade association for UK financial services reported that losses from fraud totaled 618 million pounds which is a 9% increase from the year before. Additionally, this contributed to the fifth consecutive year of increased credit card fraud.
 
