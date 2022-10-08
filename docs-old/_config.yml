@@ -1,0 +1,8 @@
+markdown: kramdown
+theme: minima
+plugins:
+- jekyll-remote-theme
+
+
+title: Credit Card Fraud Detection
+description: Team 14 | ML 4641
