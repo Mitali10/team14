@@ -1,10 +1,18 @@
-%matplotlib inline
 import matplotlib.pyplot as plt
-import seaborn as sns; sns.set()
 import numpy as np
+from CreditCardData import CreditCardData
+from sklearn import mixture
 
-from sklearn.mixture import GMM
 
-gmm = GMM(n_components=4).fit(X)
-labels = gmm.predict(X)
-plt.scatter(X[:, 0], X[:, 1], c=labels, s=40, cmap='viridis');
+ccd = CreditCardData()
+ccd.split_train_test()
+
+
+gmm = mixture.GaussianMixture(n_components=2, covariance_type='full')
+gmm.fit(ccd.data_train)
+labels = gmm.predict(ccd.data_test)
+
+
+
+plt.scatter(ccd.data_test[:, 0], ccd.data_test[:, 1], c=labels, s=40, cmap='viridis')
+plt.show()
