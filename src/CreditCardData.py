@@ -1,5 +1,6 @@
 import numpy as np
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
+
 
 import sys
 # def reduce_dataset_size(from_filepath='../data/creditcard.csv', to_filepath='../data/creditcard_sampled2.csv', proportion=0.02):
@@ -32,5 +33,20 @@ class CreditCardData:
         self.data_train, self.data_test, self.labels_train, self.labels_test = None, None, None, None
         if split:
             self.data_train, self.data_test, self.labels_train, self.labels_test = train_test_split(self.data, self.labels, test_size=test_prop)
+    def split_data(self, test_size = 0.2, iterations = 1): 
+        X = self.data
+        y = self.labels
+        X_train, X_test, y_train, y_test = ([] for i in range(4))
+        sss = StratifiedShuffleSplit(n_splits=iterations, test_size=test_size, random_state=0)
+        sss.get_n_splits(X, y)
+        for train_index, test_index in sss.split(X, y):
+            X_train.append(X[train_index])
+            X_test.append(X[test_index])
+            y_train.append(y[train_index])
+            y_test.append(y[test_index])
+
+        return X_train, X_test, y_train, y_test
+        
+
 
 
