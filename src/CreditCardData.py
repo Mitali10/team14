@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
-
+from imblearn.over_sampling import SMOTE
 
 import sys
 # def reduce_dataset_size(from_filepath='../data/creditcard.csv', to_filepath='../data/creditcard_sampled2.csv', proportion=0.02):
@@ -44,9 +44,16 @@ class CreditCardData:
             X_test.append(X[test_index])
             y_train.append(y[train_index])
             y_test.append(y[test_index])
+        return np.asarray(X_train), np.asarray(X_test), np.asarray(y_train), np.asarray(y_test)
+    def oversample(self, X_train, y_train): 
+        X_resampled , y_resampled = ([] for i in range(2))
+        for i in range(len(X_train)):
+            smote = SMOTE(sampling_strategy = 0.1) # desired ratio minority/majority = 0.1
+            X, y = smote.fit_resample(X_train[i], y_train[i])
+            X_resampled.append(X)
+            y_resampled.append(y)
+        return np.asarray(X_resampled), np.asarray(y_resampled)
 
-        return X_train, X_test, y_train, y_test
         
-
 
 
