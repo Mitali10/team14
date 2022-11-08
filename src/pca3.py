@@ -13,13 +13,20 @@ from sklearn.model_selection import StratifiedShuffleSplit
 
 from CreditCardData import CreditCardData
 
-ccd = CreditCardData()
-X = ccd.data
-y = ccd.labels
+
+# xtrain
+
+obj = CreditCardData()
+X_train, X_test, y_train, y_test = obj.split_data()
+print("Y COUNT",np.unique(y_train[0], return_counts=True) )
+X_resampled, y_resampled = obj.oversample(X_train, y_train)
+print("Y RESAMPLED COUNT", np.unique(y_resampled[0], return_counts=True))
+
+sc = StandardScaler()
 
 scaler = StandardScaler()
-scaler.fit(X) 
-X_scaled = scaler.transform(X)
+scaler.fit(X_resampled[0]) 
+X_scaled = scaler.transform(X_resampled[0])
 
 pca = PCA(n_components=3)
 pca.fit(X_scaled) 
@@ -41,8 +48,8 @@ fig = plt.figure(figsize=(7,5))
 ax = fig.add_subplot(111, projection='3d')
 
 fig.patch.set_facecolor('white')
-for l in np.unique(y):
- ix=np.where(y==l)
+for l in np.unique(y_resampled[0]):
+ ix=np.where(y_resampled[0]==l)
  ax.scatter(Xax[ix], Yax[ix], Zax[ix], c=cdict[l], s=40,
            label=labl[l], marker=marker[l], alpha=alpha[l])
 # for loop ends
