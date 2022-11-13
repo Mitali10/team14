@@ -1,7 +1,8 @@
 import numpy as np
 from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
 from imblearn.over_sampling import SMOTE
-from imblearn.under_sampling import RandomUnderSampler, NearMiss
+from imblearn.under_sampling import RandomUnderSampler, RandomOverSampler
+from collections import Counter
 
 import sys
 # def reduce_dataset_size(from_filepath='../data/creditcard.csv', to_filepath='../data/creditcard_sampled2.csv', proportion=0.02):
@@ -71,3 +72,14 @@ class CreditCardData:
             X_resampled.append(X)
             y_resampled.append(y)
         return  np.asarray(X_resampled), np.asarray(y_resampled)
+    
+    def oversample_and_undersample(self, X_train, y_train):
+        X_resampled, y_resampled = ([] for i in range(2))
+        for i in range(len(X_train)):
+            over = RandomOverSampler(sampling_strategy = 0.1)
+            X_train1, y_train1 = over.fit_resample(X_train, y_train)
+            print(Counter(y_train1))
+            under = RandomUnderSampler(sampling_strategy = 0.5)
+            X_train2, y_train2 = under.fit_resample(X_train1, y_train1)
+            print(Counter(y_train2))
+

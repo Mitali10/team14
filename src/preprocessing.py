@@ -16,9 +16,20 @@ new_obj = CreditCardData()
 X_train1, X_test1, y_train1, y_test1 = new_obj.split_data()
 ##print(new_obj.tomek_undersample(X_train1, y_train1)) --> can't use tomek bc too many features in data
 print("Y COUNT", np.unique(y_train1[0], return_counts = True))
-X_resampled1, y_resampled1 = new_obj.oversample(X_train1, y_train1)
+X_resampled1, y_resampled1 = new_obj.undersample(X_train1, y_train1)
 print("Y RESAMPLED COUNT", np.unique(y_resampled1[0], return_counts=True))
 
 
 ## can also combine oversampling and undersampling
+obj2 = CreditCardData()
+X_train2, X_test2, y_train2, y_test2 = obj2.split_data()
+print("Y COUNT", np.unique(y_train1[0], return_counts = True))
+X_resampled2, y_resampled2 = obj2.oversample_and_undersample(X_train2, y_train2)
+print("Y RESAMPLED COUNT", np.unique(y_resampled2[0], return_counts=True))
+
+
+
+
+
+
 ## idea from machine learning mastery blog: https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/
