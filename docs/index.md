@@ -39,11 +39,11 @@ If there are any issues, please let us know!
 
 ## Results and Discussion
 
-# Data Cleaning
+### Data Cleaning
 
-# Data Pre-Processing
+### Data Pre-Processing
 
-# Logistic Regression
+### Logistic Regression
 
 ## References 
 
