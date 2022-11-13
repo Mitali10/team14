@@ -1,5 +1,5 @@
 ---
-title: Project Proposal
+title: Midterm Report
 ---
 
 ## Introduction & Background
@@ -36,6 +36,14 @@ _Note: Person(s) in parenthesis are supporters, to help with research, ideas, an
 [Please visit this link to view the video.](https://drive.google.com/file/d/1r7rxllHFUsLnQqLfOq9kNSNOA2zKj3Yu/view?usp=sharing) [You can also visit this link to see our slides!](https://docs.google.com/presentation/d/1XgGfCcNP65d0k5lsMeJvIVTUFTnzbxMga3VwtFhcM-E/edit?usp=sharing)
 
 If there are any issues, please let us know!
+
+## Results and Discussion
+
+# Data Cleaning
+
+# Data Pre-Processing
+
+# Logistic Regression
 
 ## References 
 
