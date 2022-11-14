@@ -79,7 +79,9 @@ Recall: 0.8163001518840514
 
 Average Precision: 0.8540956812714939
 
-
+| Accuracy | Recall   | Precision |
+|----------|----------|-----------|
+| 0.999315 | 0.816300 | 0.854096  |
 
 ### Logistic Regression, with CV:
 
