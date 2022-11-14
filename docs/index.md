@@ -53,7 +53,9 @@ We scaled this data using StandardScaler from the sklearn.preprocessing library 
 
 	We also tried employing a combination of undersampling and oversampling to balance the distortion caused in minority class if we overpopulated it too far. For this we used RandomUnderSampler from the imblearn undersampling library. We were inspired by the approach of this article: https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification. 
 
-## Logistic Regression, no preprocessing:
+## Logistic Regression
+
+### Logistic Regression, no preprocessing:
 
 ![Confusion Matrix](images/Matrix_1.png)
 
@@ -63,7 +65,7 @@ Recall: 0.8163001518840514
 
 Average Precision: 0.8540956812714939
 
-## Logistic Regression, with CV:
+### Logistic Regression, with CV:
 
 ![Confusion Matrix](images/Matrix_2.png)
 
@@ -73,7 +75,7 @@ Recall: 0.938876035054464
 
 Average Precision: 0.7400267225389436
 
-## Logistic Regression, with SMOTE:
+### Logistic Regression, with SMOTE:
 
 ![Confusion Matrix](images/Matrix_3.png)
 
@@ -83,7 +85,7 @@ Recall: 0.9656297703211283
 
 Average Precision: 0.7710722978476139
 
-## Logistic Regression with CV and SMOTE:
+### Logistic Regression with CV and SMOTE:
 
 ![Confusion Matrix](images/Matrix_4.png)
 
@@ -93,7 +95,7 @@ Recall: 0.9183817335917139
 
 Average Precision: 0.7276010533615198
 
-## Logistic Regression with Undersampling:
+### Logistic Regression with Undersampling:
 
 ![Confusion Matrix](images/Matrix_5.png)
 
@@ -103,7 +105,7 @@ Recall: 0.9257166731710167
 
 Average Precision: 0.4661108077223297
 
-## Logistic Regression with Undersampling and CV
+### Logistic Regression with Undersampling and CV
 
 ![Confusion Matrix](images/Matrix_6.png)
 
