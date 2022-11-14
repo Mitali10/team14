@@ -50,16 +50,17 @@ print("sanity check", set(ccd.labels_test))
 ############################## MODEL -- WTIH SMOTE ##############################
 
 # train model
-# pipe = make_pipeline(SMOTE(random_state=42), StandardScaler(), LogisticRegression())       # without cross val
+pipe = make_pipeline(SMOTE(random_state=42), StandardScaler(), LogisticRegression())       # without cross val
 # pipe = make_pipeline(SMOTE(random_state=42), StandardScaler(), LogisticRegressionCV(cv=10))   # with cross val
-# pipe.fit(ccd.data_train, ccd.labels_train) 
+pipe.fit(ccd.data_train, ccd.labels_train) 
 
-# # predict with test data
-# predictions = pipe.predict(ccd.data_test)
+# predict with test data
+predictions = pipe.predict(ccd.data_test)
 
-# # assess model
-# score = pipe.score(ccd.data_test, ccd.labels_test)
-# print("Accuracy Score with SMOTE:", score)
+# assess model
+score = pipe.score(ccd.data_test, ccd.labels_test)
+print("Accuracy Score with SMOTE:", score)
+
 
 ############################## MODEL -- WTIH UNDERSAMPLING ##############################
 
