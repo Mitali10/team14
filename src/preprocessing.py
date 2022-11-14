@@ -27,9 +27,10 @@ print("Y COUNT", np.unique(y_train1[0], return_counts = True))
 X_resampled2, y_resampled2 = obj2.oversample_and_undersample(X_train2, y_train2)
 print("Y RESAMPLED COUNT", np.unique(y_resampled2[0], return_counts=True))
 
-
-
-
-
+obj3 = CreditCardData()
+X_train3, X_test3, y_train3, y_test3 = obj3.split_data()
+print("Y COUNT", np.unique(y_train1[0], return_counts = True))
+X_resampled3, y_resampled3 = obj2.oversample_and_undersample(X_train2, y_train2)
+print("Y RESAMPLED COUNT", np.unique(y_resampled2[0], return_counts=True))
 
 ## idea from machine learning mastery blog: https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/

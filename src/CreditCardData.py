@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
-from imblearn.over_sampling import SMOTE
-from imblearn.under_sampling import RandomUnderSampler, RandomOverSampler
+from imblearn.over_sampling import SMOTE, RandomOverSampler
+from imblearn.under_sampling import RandomUnderSampler
 from collections import Counter
 
 import sys
