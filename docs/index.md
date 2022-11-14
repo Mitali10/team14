@@ -63,7 +63,7 @@ Our data contains ~98.3% non-fraudulent cases and 1.7% fraudulent cases. If we j
 
 For our analysis, we use recall, area under ROC curve (AUC-ROC), and accuracy as our performance metrics. Recall is defined as the ratio between the number of correctly identified positive samples and total number of samples classified as positive samples(this number would include the false positive samples). Accordingly, the higher the metric, the higher ability of the model to detect positive samples. 
 
-AUC-ROC, overall, tells us how well the model can distinguish between classes on a normalized scale between 0 and 1. A higher number tells us the model is better at making this distinction. AUC-ROC is composed of two separate components: Area Under Curve(AUC) is a measure of separability. 
+AUC-ROC, overall, tells us how well the model can distinguish between classes on a normalized scale between 0 and 1. A higher number tells us the model is better at making this distinction. AUC-ROC is composed of two separate components: Area Under the Curve and Receiver Operating Characteristics. Area Under The Curve(AUC) is a measure of separability. Receiver Operating Characteristics(ROC) functions as a probability curve showing the performance of the classification model at all classification thresholds.
 
 ## Logistic Regression Results
 
