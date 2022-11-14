@@ -120,7 +120,7 @@ We employed LinearRegression from the sklearn.linear_model library to implement 
 | 0.973895 | 0.925717 | 0.466111  |
 
 
-### Logistic Regression with Undersampling and CV
+### Logistic Regression with Undersampling and CV:
 
 ![Confusion Matrix](images/Matrix_6.png)
 
