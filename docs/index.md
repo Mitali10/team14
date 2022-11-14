@@ -45,7 +45,9 @@ We also tried employing a combination of undersampling and oversampling to balan
 
 Since our data is highly unbalanced, we cannot rely on just precision to discern how effective our model is. Using the terminology of positives, negatives, false and true, we define positives to be fraudulent transactions and negatives to be non-fraudulent, and true to be aligned with the ground truth and vice versa. For example, if our model predicts a non-fraudulent transaction to be fraudulent, it is considered a false positive. 
 
-Our data contains ~98.3% non-fraudulent cases and 1.7% fraudulent cases. If we just use accuracy, a model that always predicts “non-fraudulent” will achieve an accuracy of 98.3%. Out of context, this is a great accuracy. However, for an unbalanced dataset, it tells us nothing about how well the model fits our dataset. Therefore, we must consider other performance metrics that measure other ratios involving true negatives, true positives, etc. 
+Our data contains ~99.928% non-fraudulent cases and 0.172% fraudulent cases. If we just use accuracy, a model that always predicts “non-fraudulent” will achieve an accuracy of 99.928%. Out of context, this is a terrific accuracy, but we know that the model knows nothing about the dataset. This is because we are only looking at the true negatives vs total number of negatives. Looking at the same ratio but for positives (also defined as recall below), this model will attain 0% because it never classifies anything as fraud. 
+
+Hence, for an unbalanced dataset, accuracy doesn’t tell us everything about how well the model fits our dataset; we must consider other performance metrics that measure other ratios involving true negatives, true positives, etc. 
 
 For our analysis, we use recall, area under ROC curve (AUC-ROC), and accuracy as our performance metrics. Recall is defined as the ratio between the number of correctly identified positive samples and total number of samples classified as positive samples(this number would include the false positive samples). Accordingly, the higher the metric, the higher ability of the model to detect positive samples. 
 
