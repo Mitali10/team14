@@ -16,9 +16,10 @@ According to Experian, credit card CVV’s sell on the dark web for as little as
 We found a Kaggle dataset to suit our purpose, titled [Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud). It contains anonymized credit card transactions from September 2013 collected from European cardholders by the University of Brusells and the Machine Learning Group. The data is labeled as either fraudulent or genuine and is highly unbalanced, as the positive class/frauds account for 0.172% of all transactions with a total of 284,807 transactions.
 
 # Methods
+
 Our dataset is complete, so minimal cleaning is required. Because the dataset is very imbalanced, we have chosen to use the data preprocessing technique of oversampling on fraudulent transactions. 
 
-We plan to detect fraud using GMM clustering, logistic regression analysis, and a multi-layer perceptron neural network. GMM results in a soft-clustering output that we can compare against the dataset’s labeled output to determine the model’s accuracy. Regression analysis (in our case, logistic regression) can be used to identify the correlation between the input parameters and fraudulence. Finally, a well-tuned MLP neural network for classification will likely serve as the basis of comparison.
+We plan to detect fraud using GMM clustering, logistic regression analysis, and a multi-layer perceptron neural network (MLP). GMM results in a soft-clustering output that we can compare against the dataset’s labeled output to determine the model’s accuracy. Regression analysis (in our case, logistic regression) can be used to identify the correlation between the input parameters and fraudulence. We can implement MLP in the form of a feed forward network that spits out a binary classification result. It would have (at least) three layers: an input layer entailing the feature vectors of our data points, the hidden layer(s) containing the weights (that are propagated to the next layer if any), and the final layer containing the predicted classification. 
 
 ## Data Cleaning
 
@@ -26,7 +27,7 @@ We didn’t have to run extensive cleaning since all our entries were complete a
 
 ## Data Preprocessing
 
-![Confusion Matrix](images/credit_card_data_2d.png)
+![Dataset Visualization](images/credit_card_data_2d.png)
 
 PCA is one of the most prominent pre-processing methods to improve classifier performance. Our dataset had already been run through PCA and contained 28 numerical input variables which were the result of this PCA transformation. 
 
@@ -34,7 +35,7 @@ We scaled this data using StandardScaler from the sklearn.preprocessing library 
 
 For cross validation, we employed StratifiedShuffleSplit from sklearn.model_selection for splitting instead of a regular unbiased split. This cross validation method combines k-fold and shuffling techniques to maintain the percentage of majority and minority samples across folds. 
 
-![Confusion Matrix](images/smote.png)
+![SMOTE](images/smote.png)
 
 Our data reflects a majority: minority ratio of 227451: 394. For resampling techniques, we chose oversampling since we wanted to equalize this majority: minority ratio without losing a lot of data. For oversampling, we used the popular SMOTE (Synthetic Minority Oversampling Technique) library that is widely used for resampling highly unbalanced datasets. As the name suggests, this technique generates synthetic data by interpolating samples from the minority class using nearest neighbors.  
 
