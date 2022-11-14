@@ -6,22 +6,66 @@ from CreditCardData import CreditCardData
 from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import LogisticRegressionCV
 from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
+# from sklearn.pipeline import make_pipeline
 from sklearn import metrics
 from sklearn.metrics import recall_score
 from sklearn.metrics import classification_report
 
+from imblearn.pipeline import make_pipeline
+from imblearn.under_sampling import RandomUnderSampler
 
 
-############################## MODEL ##############################
+
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import average_precision_score, precision_recall_curve
+from sklearn.metrics import auc, plot_precision_recall_curve
+import matplotlib.pyplot as plt
+
+from imblearn.over_sampling import SMOTE
+
+
+
+############################## GET DATA ##############################
 
 # get data
 ccd = CreditCardData(split=True)
 print("sanity check", set(ccd.labels_test))
 
+
+############################## MODEL -- NO SMOTE ##############################
+
+# # train model
+# pipe = make_pipeline(StandardScaler(), LogisticRegression())          # without cross val
+# pipe = make_pipeline(StandardScaler(), LogisticRegressionCV(cv=10))   # with cross val
+# pipe.fit(ccd.data_train, ccd.labels_train) 
+
+# # predict with test data
+# predictions = pipe.predict(ccd.data_test)
+
+# # assess model
+# score = pipe.score(ccd.data_test, ccd.labels_test)
+# print("Accuracy Score:", score)
+
+############################## MODEL -- WTIH SMOTE ##############################
+
 # train model
-pipe = make_pipeline(StandardScaler(), LogisticRegression())
-# pipe = make_pipeline(StandardScaler(), LogisticRegressionCV(cv=10))
+# pipe = make_pipeline(SMOTE(random_state=42), StandardScaler(), LogisticRegression())       # without cross val
+# pipe = make_pipeline(SMOTE(random_state=42), StandardScaler(), LogisticRegressionCV(cv=10))   # with cross val
+# pipe.fit(ccd.data_train, ccd.labels_train) 
+
+# # predict with test data
+# predictions = pipe.predict(ccd.data_test)
+
+# # assess model
+# score = pipe.score(ccd.data_test, ccd.labels_test)
+# print("Accuracy Score with SMOTE:", score)
+
+############################## MODEL -- WTIH UNDERSAMPLING ##############################
+
+# train model
+pipe = make_pipeline(RandomUnderSampler(sampling_strategy='majority'), StandardScaler(), LogisticRegression())       # without cross val
+pipe = make_pipeline(RandomUnderSampler(sampling_strategy='majority'), StandardScaler(), LogisticRegressionCV(cv=10))       # with cross val
 pipe.fit(ccd.data_train, ccd.labels_train) 
 
 # predict with test data
@@ -29,7 +73,7 @@ predictions = pipe.predict(ccd.data_test)
 
 # assess model
 score = pipe.score(ccd.data_test, ccd.labels_test)
-print("Score:", score)
+print("Accuracy Score with UNDERSAMPLING:", score)
 
 ############################## POST-PROCESSING: EVERYTHING? ##############################
 
@@ -44,14 +88,6 @@ print("Recall:", recall)
 
 
 ############################## POST-PROCESSING: PRECISION ##############################
-
-
-from sklearn import datasets
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import average_precision_score, precision_recall_curve
-from sklearn.metrics import auc, plot_precision_recall_curve
-import matplotlib.pyplot as plt
 
 # Get the predicited probability of testing data
 y_score = pipe.predict_proba(ccd.data_test)[:, 1]
