@@ -37,8 +37,6 @@ _Note: Person(s) in parenthesis are supporters, to help with research, ideas, an
 
 If there are any issues, please let us know!
 
-# Results and Discussion
-
 ## Data Cleaning
 
 We didn’t have to run extensive cleaning since all our entries were complete and in good form. This is with the exception of minor changes such as eliminating newline characters to not interfere with the values. We split our dataset into “data” as floats and “labels” as integers.
@@ -49,11 +47,27 @@ PCA is one of the most prominent pre-processing methods to improve classifier pe
 
 We scaled this data using StandardScaler from the sklearn.preprocessing library and split our data and labels into training and test at a 80:20 split. 
 
-	Our data is highly unbalanced with a majority: minority ratio of 227451: 394. For sampling techniques, we chose oversampling since we wanted to equalize this majority: minority ratio without losing a lot of data. For oversampling, we used the popular SMOTE (Synthetic Minority Oversampling Technique) library that is widely used for resampling highly unbalanced datasets. As the name suggests, this technique generates synthetic data by interpolating samples from the minority class using nearest neighbors.  
+For cross validation, we employed StratifiedShuffleSplit from sklearn.model_selection for splitting instead of a regular unbiased split. This cross validation method combines k-fold and shuffling techniques to maintain the percentage of majority and minority samples across folds. 
+
+	Our data reflects a majority: minority ratio of 227451: 394. For resampling techniques, we chose oversampling since we wanted to equalize this majority: minority ratio without losing a lot of data. For oversampling, we used the popular SMOTE (Synthetic Minority Oversampling Technique) library that is widely used for resampling highly unbalanced datasets. As the name suggests, this technique generates synthetic data by interpolating samples from the minority class using nearest neighbors.  
 
 	We also tried employing a combination of undersampling and oversampling to balance the distortion caused in minority class if we overpopulated it too far. For this we used RandomUnderSampler from the imblearn undersampling library. We were inspired by the approach of this article: https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification. 
 
-## Logistic Regression
+# Results
+
+Since our data is highly unbalanced, we cannot rely on just precision to discern how effective our model is. Using the terminology of positives, negatives, false and true, we define positives to be fraudulent transactions and negatives to be non-fraudulent, and true to be aligned with the ground truth and vice versa. For example, if our model predicts a non-fraudulent transaction to be fraudulent, it is considered a false positive. 
+
+Our data contains ~98.3% non-fraudulent cases and 1.7% fraudulent cases. If we just use accuracy, a model that always predicts “non-fraudulent” will achieve an accuracy of 98.3%. Out of context, this is a great accuracy. However, for an unbalanced dataset, it tells us nothing about how well the model fits our dataset. Therefore, we must consider other performance metrics that measure other ratios involving true negatives, true positives, etc. 
+
+For our analysis, we use recall, area under ROC curve (AUC-ROC), and accuracy as our performance metrics. Recall is defined as the ratio between the number of correctly identified positive samples and total number of samples classified as positive samples(this number would include the false positive samples). Accordingly, the higher the metric, the higher ability of the model to detect positive samples. 
+
+AUC-ROC, overall, tells us how well the model can distinguish between classes on a normalized scale between 0 and 1. A higher number tells us the model is better at making this distinction. AUC-ROC is composed of two separate components: Area Under Curve(AUC) is a measure of separability. 
+
+## Logistic Regression Results
+
+We chose to implement logistic regression since it is a relatively straightforward but effective classification technique that is easy to interpret, analyze and debug. Additionally, a supervised method utilizes all the known information and provides a good first glance into our dataset. Logistic regression is also widely used and well suited for the task of binary classification which aligns with our problem definition of predicting whether a transaction is fraudulent or not. 
+
+We employed LinearRegression from the sklearn.linear_model library to implement this method. Additionally, for an extra layer of verification, we implemented cross validation from sklearn.model_selection and paired it with our resampling techniques (SMOTE and random undersampling) in order to find the best combination. 
 
 ### Logistic Regression, no preprocessing:
 
@@ -71,7 +85,7 @@ Average Precision: 0.8540956812714939
 
 ![Confusion Matrix](images/Matrix_2.png)
 
-Accuracy Score: 0.9990695551420246
+Accuracy: 0.9990695551420246
 
 Recall: 0.938876035054464
 
@@ -83,7 +97,7 @@ Average Precision: 0.7400267225389436
 
 ![Confusion Matrix](images/Matrix_3.png)
 
-Accuracy Score with SMOTE: 0.9911695516309118
+Accuracy: 0.9911695516309118
 
 Recall: 0.9656297703211283
 
@@ -95,7 +109,7 @@ Average Precision: 0.7710722978476139
 
 ![Confusion Matrix](images/Matrix_4.png)
 
-Accuracy Score with SMOTE: 0.99183666303851
+Accuracy: 0.99183666303851
 
 Recall: 0.9183817335917139
 
@@ -107,7 +121,7 @@ Average Precision: 0.7276010533615198
 
 ![Confusion Matrix](images/Matrix_5.png)
 
-Accuracy Score with UNDERSAMPLING: 0.9738948772866122
+Accuracy: 0.9738948772866122
 
 Recall: 0.9257166731710167
 
@@ -119,7 +133,7 @@ Average Precision: 0.4661108077223297
 
 ![Confusion Matrix](images/Matrix_6.png)
 
-Accuracy Score with UNDERSAMPLING: 0.9657842070152031
+Accuracy: 0.9657842070152031
 
 Recall: 0.9444647332762541
 
