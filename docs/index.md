@@ -19,7 +19,7 @@ We found a Kaggle dataset to suit our purpose, titled [Credit Card Fraud Detecti
 
 Our dataset is complete, so minimal cleaning is required. Because the dataset is very imbalanced, we have chosen to use the data preprocessing technique of oversampling on fraudulent transactions. 
 
-We plan to detect fraud using GMM clustering, logistic regression analysis, and a multi-layer perceptron neural network (MLP). GMM results in a soft-clustering output that we can compare against the dataset’s labeled output to determine the model’s accuracy. Regression analysis (in our case, logistic regression) can be used to identify the correlation between the input parameters and fraudulence. We can implement MLP in the form of a feed forward network that spits out a binary classification result. It would have (at least) three layers: an input layer entailing the feature vectors of our data points, the hidden layer(s) containing the weights (that are propagated to the next layer if any), and the final layer containing the predicted classification. 
+We plan to implement and analyze fraud detection results for GMM clustering, logistic regression analysis, and a multi-layer perceptron neural network (MLP). GMM results in a soft-clustering output that we can compare against the dataset’s labeled output to determine the model’s accuracy. Regression analysis (in our case, logistic regression) can be used to identify the correlation between the input parameters and fraudulence. We can implement MLP in the form of a feed forward network that spits out a binary classification result. It would have (at least) three layers: an input layer entailing the feature vectors of our data points, the hidden layer(s) containing the weights (that are propagated to the next layer if any), and the final layer containing the predicted classification. 
 
 ## Data Cleaning
 
@@ -54,6 +54,7 @@ Hence, for an unbalanced dataset, accuracy doesn’t tell us everything about ho
 For our analysis, we use recall, area under ROC curve (AUC-ROC), and accuracy as our performance metrics. Recall is defined as the ratio between the number of correctly identified positive samples and total number of samples classified as positive samples(this number would include the false positive samples). Accordingly, the higher the metric, the higher ability of the model to detect positive samples. 
 
 AUC-ROC, overall, tells us how well the model can distinguish between classes on a normalized scale between 0 and 1. A higher number tells us the model is better at making this distinction. AUC-ROC is composed of two separate components: Area Under the Curve and Receiver Operating Characteristics. Area Under The Curve(AUC) is a measure of separability. Receiver Operating Characteristics(ROC) functions as a probability curve showing the performance of the classification model at all classification thresholds.
+
 
 ## Logistic Regression Results
 
