@@ -73,11 +73,6 @@ We employed LinearRegression from the sklearn.linear_model library to implement 
 
 ![Confusion Matrix](images/Matrix_1.png)
 
-Accuracy: 0.9993153330290369
-
-Recall: 0.8163001518840514
-
-Average Precision: 0.8540956812714939
 
 | Accuracy | Recall   | Precision |
 |----------|----------|-----------|
@@ -87,59 +82,45 @@ Average Precision: 0.8540956812714939
 
 ![Confusion Matrix](images/Matrix_2.png)
 
-Accuracy: 0.9990695551420246
 
-Recall: 0.938876035054464
-
-Average Precision: 0.7400267225389436
-
-
+| Accuracy | Recall   | Precision |
+|----------|----------|-----------|
+| 0.999069 | 0.938876 | 0.740027  |
 
 ### Logistic Regression, with SMOTE:
 
 ![Confusion Matrix](images/Matrix_3.png)
 
-Accuracy: 0.9911695516309118
 
-Recall: 0.9656297703211283
-
-Average Precision: 0.7710722978476139
-
-
+| Accuracy | Recall   | Precision |
+|----------|----------|-----------|
+| 0.991170 | 0.965630 | 0.771072  |
 
 ### Logistic Regression with CV and SMOTE:
 
 ![Confusion Matrix](images/Matrix_4.png)
 
-Accuracy: 0.99183666303851
-
-Recall: 0.9183817335917139
-
-Average Precision: 0.7276010533615198
-
-
+| Accuracy | Recall   | Precision |
+|----------|----------|-----------|
+| 0.991837 | 0.918382 | 0.727601  |
 
 ### Logistic Regression with Undersampling:
 
 ![Confusion Matrix](images/Matrix_5.png)
 
-Accuracy: 0.9738948772866122
 
-Recall: 0.9257166731710167
-
-Average Precision: 0.4661108077223297
-
+| Accuracy | Recall   | Precision |
+|----------|----------|-----------|
+| 0.973895 | 0.925717 | 0.466111  |
 
 
 ### Logistic Regression with Undersampling and CV
 
 ![Confusion Matrix](images/Matrix_6.png)
 
-Accuracy: 0.9657842070152031
-
-Recall: 0.9444647332762541
-
-Average Precision: 0.6771432351413127
+| Accuracy | Recall   | Precision |
+|----------|----------|-----------|
+| 0.965784 | 0.944465 | 0.677143  |
 
 # References 
 
