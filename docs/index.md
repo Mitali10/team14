@@ -58,73 +58,60 @@ We scaled this data using StandardScaler from the sklearn.preprocessing library 
 ![Confusion Matrix](images/Matrix_1.png)
 
 Accuracy: 0.9993153330290369
-Recall: 0.8163001518840514
-Average Precision: 0.8540956812714939
-Confusion Matrix
- [[56861     3]
- [   36    62]]
 
+Recall: 0.8163001518840514
+
+Average Precision: 0.8540956812714939
 
 ## Logistic Regression, with CV:
 
 ![Confusion Matrix](images/Matrix_2.png)
 
 Accuracy Score: 0.9990695551420246
-Recall: 0.938876035054464
-Average Precision: 0.7400267225389436
-Confusion Matrix
- [[56342   514]
- [   12    94]]
 
+Recall: 0.938876035054464
+
+Average Precision: 0.7400267225389436
 
 ## Logistic Regression, with SMOTE:
 
 ![Confusion Matrix](images/Matrix_3.png)
 
 Accuracy Score with SMOTE: 0.9911695516309118
+
 Recall: 0.9656297703211283
+
 Average Precision: 0.7710722978476139
-Confusion Matrix
- [[56365   497]
- [    6    94]]
-
-
 
 ## Logistic Regression with CV and SMOTE:
 
 ![Confusion Matrix](images/Matrix_4.png)
 
 Accuracy Score with SMOTE: 0.99183666303851
+
 Recall: 0.9183817335917139
+
 Average Precision: 0.7276010533615198
-Confusion Matrix
- [[56410   449]
- [   16    87]]
-
-
 
 ## Logistic Regression with Undersampling:
 
 ![Confusion Matrix](images/Matrix_5.png)
 
 Accuracy Score with UNDERSAMPLING: 0.9738948772866122
-Recall: 0.9257166731710167
-Average Precision: 0.4661108077223297
-Confusion Matrix
- [[55382  1474]
- [   13    93]]
 
+Recall: 0.9257166731710167
+
+Average Precision: 0.4661108077223297
 
 ## Logistic Regression with Undersampling and CV
 
 ![Confusion Matrix](images/Matrix_6.png)
 
 Accuracy Score with UNDERSAMPLING: 0.9657842070152031
+
 Recall: 0.9444647332762541
+
 Average Precision: 0.6771432351413127
-Confusion Matrix
- [[54929  1942]
- [    7    84]]
 
 # References 
 
