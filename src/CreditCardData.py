@@ -48,7 +48,7 @@ class CreditCardData:
     def oversample(self, X_train, y_train): 
         X_resampled , y_resampled = ([] for i in range(2))
         for i in range(len(X_train)):
-            smote = SMOTE(sampling_strategy = 0.1) # desired ratio minority/majority = 0.1
+            smote = SMOTE(random_state = 42, sampling_strategy=0.1) # desired ratio minority/majority = 0.1
             X, y = smote.fit_resample(X_train[i], y_train[i])
             X_resampled.append(X)
             y_resampled.append(y)
