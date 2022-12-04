@@ -33,6 +33,7 @@ class CreditCardData:
         self.data_train, self.data_test, self.labels_train, self.labels_test = None, None, None, None
         if split:
             self.data_train, self.data_test, self.labels_train, self.labels_test = train_test_split(self.data, self.labels, test_size=test_prop)
+    
     def split_data(self, test_size = 0.2, iterations = 1): 
         X = self.data
         y = self.labels
@@ -45,6 +46,8 @@ class CreditCardData:
             y_train.append(y[train_index])
             y_test.append(y[test_index])
         return np.asarray(X_train), np.asarray(X_test), np.asarray(y_train), np.asarray(y_test)
+    
+    
     def oversample(self, X_train, y_train): 
         X_resampled , y_resampled = ([] for i in range(2))
         for i in range(len(X_train)):
