@@ -56,7 +56,7 @@ For our analysis, we use recall, area under ROC curve (AUC-ROC), and accuracy as
 AUC-ROC, overall, tells us how well the model can distinguish between classes on a normalized scale between 0 and 1. A higher number tells us the model is better at making this distinction. AUC-ROC is composed of two separate components: Area Under the Curve and Receiver Operating Characteristics. Area Under The Curve(AUC) is a measure of separability. Receiver Operating Characteristics(ROC) functions as a probability curve showing the performance of the classification model at all classification thresholds.
 
 
-## Logistic Regression Results
+## Logistic Regression:
 
 We chose to implement logistic regression since it is a relatively straightforward but effective classification technique that is easy to interpret, analyze and debug. Additionally, a supervised method utilizes all the known information and provides a good first glance into our dataset. Logistic regression is also widely used and well suited for the task of binary classification which aligns with our problem definition of predicting whether a transaction is fraudulent or not. 
 
@@ -114,6 +114,20 @@ We employed LinearRegression from the sklearn.linear_model library to implement 
 | Accuracy | Recall   | Precision |
 |----------|----------|-----------|
 | 0.965784 | 0.944465 | 0.677143  |
+
+##Random Forest
+
+| Accuracy | Recall   | Precision |
+|----------|----------|-----------|
+| 0.926356 | 0.999736 | 0.999771  |
+
+##Neural Network
+
+| Accuracy | Recall   | Precision |
+|----------|----------|-----------|
+| 0.907407 | 0.999819 | 0.971805  |
+
+##SVM
 
 # Contribution Table
 ![Contribution Table](images/contrib.png)
