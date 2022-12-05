@@ -162,19 +162,19 @@ Our MLP Neural Network produced a recall of over 90% - most of the fraudulent tr
 
 ## 5.4 SVM
 
-SVM was generally unsuccessful in detecting over two-thirds of the fraudulent transactions. Although the accuracy is very high, it's underwhelming in the context of an imbalanced dataset such as ours. SVM classified the vast majority of datapoints as authentic transactions which bolstered accuracy but plummeted the recall score.
+SVM was the least successful in classifying fraudulent transactions as such, with a recall of around 82%. Although the accuracy is very high, it's underwhelming in the context of an imbalanced dataset such as ours. The precision was also unimpressive when paired with the lackluster recall score. 
 
 ![Confusion Matrix](images/SVM_Matrix.png)
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.911274 | 0.822917 | 0.790000  | 0.911274  |
+| 0.999333 | 0.822917 | 0.790000  | 0.911274  |
 
 # 6 Conclusions 
 
 As expected, with an imbalanced dataset such as ours, resampling techniques applied to rebalance training data increased the efficacy of our models, although this pre-processing seemed to largely decrease precision scores - signalling more false positives than without. 
 
-We found that Random Forest and our MLP Neural Network, while decently effective, did not perform as well as the Logistic Regression model. While they had higher precision ratings, their recall scores left a lot to be desired, with our Neural Network only barely surpassing a recall of 90%. When it comes to SVM, we had very little success in fitting the model to the data - though our accuracy was high, recall remained well under 50% signalling an issue of underfitting.  
+We found that Random Forest, SVM, and our MLP Neural Network, while decently effective, did not perform as well as the Logistic Regression model. While they generally had higher precision ratings than logistic regression, their recall scores left a lot to be desired, with our neural network only barely surpassing a recall of 90%. 
 
 Based on our assessment that recall alongside accuracy would be the most relevant parameters in evaluating our models, Logistic Regression appeared to be the most successful model in identifying fraudulent data - especially when paired with SMOTE. Our model had a recall score of .965 while maintaining an accuracy of .992, meaning we only missed around 3% of fraudulent transactions while still classifying the vast majority of datapoints properly. 
 
