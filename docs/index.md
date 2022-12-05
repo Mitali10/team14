@@ -140,9 +140,9 @@ AUC-ROC, overall, tells us how well the model can distinguish between classes on
 
 ![Confusion Matrix](images/RF_Matrix.png)
 
-| Accuracy | Recall   | Precision |
-|----------|----------|-----------|
-| 0.999508 | 0.852941 | 0.870000  |
+| Accuracy | Recall   | Precision | AUC-ROC  |
+|----------|----------|-----------|----------|
+| 0.999508 | 0.852941 | 0.870000  | 0.918129 |
 
 ## Neural Network
 
