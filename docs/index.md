@@ -51,9 +51,22 @@ We employed LinearRegression from the sklearn.linear_model library to implement 
 
 ## Random Forest:
 
+We chose to implement Random Forest due to its utility in binary classification problems, especially when dealing with a large dataset. As stated before, utilizing another supervised method is well-advised with a labeled dataset such as ours. 
+
+We used RandomForestClassifier from the sklearn.ensemble library for this method. We also utilized SMOTE undersampling in order to account for our imbalanced dataset. 
+
 ## Neural Network:
 
+We chose to attempt implementing a Neural Network for this problem in order to find a high accuracy predictor of credit card fraud. 
+
+We used an MLP Neural Nework with an input layer, three hidden layers of sizes 50, 200, and 50, with an output layer giving us the prediction for any given datapoint. 
+
 ## SVM:
+
+The support vector machine algorithm (SVM) is incredibly useful when working with datasets with many features, such as ours. This algorithm generally works well without needing to do a lot of transformations on our dataset. One downside is that this algorithm can take a long time to run with a dataset as large as this one.
+
+We used svm from sklearn in order to implement SVM. We also utilized StratifiedShuffleSplit from sklearn.model_selection in order to partition the dataset. 
+
 
 # Results
 
