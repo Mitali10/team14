@@ -1,5 +1,5 @@
 ---
-title: Midterm Report
+title: Final Report
 ---
 
 # Introduction & Background
@@ -83,6 +83,8 @@ AUC-ROC, overall, tells us how well the model can distinguish between classes on
 
 ## Logistic Regression:
 
+Our logistic regression model appears to produce the best results when paired with SMOTE undersampling techniques. For our dataset, recall is incredibly important as it quantifies the proportion of fraudulent transactions that were detected. Logistic Regression with SMOTE produced the highest recall and AUC-ROC scores, while also maintaining an accuracy score of above 99%. For all instances of logistic regression, precision was relatively low, meaning we had a relatively high rate of false positives (authentic transactions being labeled as fraudulent).
+
 ### Logistic Regression, no preprocessing:
 
 ![Confusion Matrix](images/Matrix_1.png)
@@ -138,15 +140,17 @@ AUC-ROC, overall, tells us how well the model can distinguish between classes on
 
 ## Random Forest
 
+Our Random Forest model produced a decent recall score - though not nearly as good as with linear regression - while maintaining an accuracy score of well over 99%. The high AUC-ROC score indicates that our model distinguishes well between the two classes - those being fraudulent and authentic transactions. 
+
 ![Confusion Matrix](images/RF_Matrix.png)
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.999508 | 0.852941 | 0.870000  |  0.852941 |
+| 0.999508 | 0.852941 | 0.870000  |  0.918129 |
 
-Our Random Forest model produced a decent recall score - though not nearly as good as with linear regression - while maintaining an accuracy score of well over 99%. The high AUC-ROC score indicates that our model distinguishes well between the two classes - those being fraudulent and authentic transactions.
+## MLP Neural Network
 
-## Neural Network
+Our MLP Neural Network produced a recall of over 90% - most of the fraudulent transactions were properly labeled - while still having an accuracy score of around 97%. The precision score is relatively lackluster - only about 80% of the transactions labeled as fraudulent were in-fact fraudulent.
 
 ![Confusion Matrix](images/NN_Matrix.png)
 
@@ -154,15 +158,23 @@ Our Random Forest model produced a decent recall score - though not nearly as go
 |----------|----------|-----------|-----------|
 | 0.971683 | 0.907407 | 0.809524  |
 
-
-
 ## SVM
+
+SVM was generally unsuccessful in detecting over two-thirds of the fraudulent transactions. Although the accuracy is very high, this is irrelevant with an imbalanced dataset such as ours. SVM classified the vast majority of datapoints as authentic transactions which plummeted the recall score.
 
 ![Confusion Matrix](images/SVM_Matrix.png)
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
 | 0.998525 | 0.326531 | 0.640000  |
+
+# Conclusions 
+
+As expected, with an imbalanced dataset such as ours, resampling techniques applied to rebalance training data increased the efficacy of our models, although this pre-processing seemed to largely decrease precision scores - signalling more false positives than without. 
+
+Based on our assessment that recall and accuracy would be the most relevant parameters in evaluating our models, Logistic Regression appeared to be the most successful model in identifying fraudulent data - especially when paired with SMOTE. Our model had a recall score of .965 while maintaining an accuracy of .992, meaning we only missed around 3% of fraudulent transactions while still classifying the vast majority of datapoints properly. 
+
+We found that Random Forest and our MLP Neural Network, while decently effective, did not perform as well as the Logistic Regression model. While they had higher precision ratings, their recall scores left a lot to be desired, with our Neural Network only barely surpassing a recall of 90%. When it comes to SVM, we had very little success in fitting the model to the data - though our accuracy was high, recall remained well under 50% signalling an issue of underfitting.  
 
 # Contribution Table
 ![Contribution Table](images/contrib.png)
