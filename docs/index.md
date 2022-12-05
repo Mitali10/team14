@@ -83,7 +83,7 @@ AUC-ROC, overall, tells us how well the model can distinguish between classes on
 
 ## 5.1 Logistic Regression:
 
-Our logistic regression model appears to produce the best results when paired with SMOTE undersampling techniques. For our dataset, recall is incredibly important as it quantifies the proportion of fraudulent transactions that were detected. Logistic Regression with SMOTE produced the highest recall and AUC-ROC scores, while also maintaining an accuracy score of above 99%. For all instances of logistic regression, precision was relatively low, meaning we had a relatively high rate of false positives (authentic transactions being labeled as fraudulent).
+Our logistic regression model appears to produce the best results when paired with SMOTE undersampling techniques. For our dataset, recall is incredibly important as it quantifies the proportion of fraudulent transactions that were detected. Logistic Regression with SMOTE produced the highest recall and AUC-ROC scores, while also maintaining an accuracy score of above 99%. For all instances of logistic regression, precision was relatively low, meaning we had a relatively high rate of false positives (authentic transactions being labeled as fraudulent). 
 
 ### 5.1.1 Logistic Regression, no preprocessing:
 
@@ -93,6 +93,8 @@ Our logistic regression model appears to produce the best results when paired wi
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
 | 0.999315 | 0.816300 | 0.854096  | 0.816300  |
+
+Without pre-processing, we appeared to produce the highest precision scores of all the logistic regression models we ran, however this simultaneously produced the lowest recall - which is far more undesirable in the context of our dataset.
 
 ### 5.1.2 Logistic Regression, with CV:
 
