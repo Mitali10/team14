@@ -88,53 +88,53 @@ AUC-ROC, overall, tells us how well the model can distinguish between classes on
 ![Confusion Matrix](images/Matrix_1.png)
 
 
-| Accuracy | Recall   | Precision |
-|----------|----------|-----------|
-| 0.999315 | 0.816300 | 0.854096  |
+| Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|-----------|-----------|
+| 0.999315 | 0.816300 | 0.854096  | 0.816300  |
 
 ### Logistic Regression, with CV:
 
 ![Confusion Matrix](images/Matrix_2.png)
 
 
-| Accuracy | Recall   | Precision |
-|----------|----------|-----------|
-| 0.999069 | 0.938876 | 0.740027  |
+| Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|-----------|-----------|
+| 0.999069 | 0.938876 | 0.740027  |  0.938876 |
 
 ### Logistic Regression, with SMOTE:
 
 ![Confusion Matrix](images/Matrix_3.png)
 
 
-| Accuracy | Recall   | Precision |
-|----------|----------|-----------|
-| 0.991170 | 0.965630 | 0.771072  |
+| Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|-----------|-----------|
+| 0.991170 | 0.965630 | 0.771072  | 0.991170  |
 
 ### Logistic Regression with CV and SMOTE:
 
 ![Confusion Matrix](images/Matrix_4.png)
 
-| Accuracy | Recall   | Precision |
-|----------|----------|-----------|
-| 0.991837 | 0.918382 | 0.727601  |
+| Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|-----------|-----------|
+| 0.991837 | 0.918382 | 0.727601  | 0.991837  |
 
 ### Logistic Regression with Undersampling:
 
 ![Confusion Matrix](images/Matrix_5.png)
 
 
-| Accuracy | Recall   | Precision |
-|----------|----------|-----------|
-| 0.973895 | 0.925717 | 0.466111  |
+| Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|-----------|-----------|
+| 0.973895 | 0.925717 | 0.466111  | 0.925717  |
 
 
 ### Logistic Regression with Undersampling and CV:
 
 ![Confusion Matrix](images/Matrix_6.png)
 
-| Accuracy | Recall   | Precision |
-|----------|----------|-----------|
-| 0.965784 | 0.944465 | 0.677143  |
+| Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|-----------|-----------|
+| 0.965784 | 0.944465 | 0.677143  | 0.965784  | 
 
 Our logistic regression model appears to produce the best results when paired with SMOTE undersampling techniques. For our dataset, recall is incredibly important as it quantifies the proportion of fraudulent transactions that were detected. Logistic Regression with SMOTE produced the highest recall score, while also maintaining an accuracy score of above 99%. 
 
@@ -142,9 +142,9 @@ Our logistic regression model appears to produce the best results when paired wi
 
 ![Confusion Matrix](images/RF_Matrix.png)
 
-| Accuracy | Recall   | Precision | AUC-ROC  |
-|----------|----------|-----------|----------|
-| 0.999508 | 0.852941 | 0.870000  | 0.918129 |
+| Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|-----------|-----------|
+| 0.999508 | 0.852941 | 0.870000  |  0.918129 |
 
 Our Random Forest model produced a decent recall score - though not nearly as good as with linear regression - while maintaining an accuracy score of well over 99%. The high AUC-ROC score indicates that our model distinguishes well between the two classes - those being fraudulent and authentic transactions.
 
@@ -152,8 +152,8 @@ Our Random Forest model produced a decent recall score - though not nearly as go
 
 ![Confusion Matrix](images/NN_Matrix.png)
 
-| Accuracy | Recall   | Precision |
-|----------|----------|-----------|
+| Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|-----------|-----------|
 | 0.971683 | 0.907407 | 0.809524  |
 
 
@@ -162,8 +162,8 @@ Our Random Forest model produced a decent recall score - though not nearly as go
 
 ![Confusion Matrix](images/SVM_Matrix.png)
 
-| Accuracy | Recall   | Precision |
-|----------|----------|-----------|
+| Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|-----------|-----------|
 | 0.998525 | 0.326531 | 0.640000  |
 
 # Contribution Table
