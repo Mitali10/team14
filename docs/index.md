@@ -168,7 +168,7 @@ SVM was generally unsuccessful in detecting over two-thirds of the fraudulent tr
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.998525 | 0.326531 | 0.640000  |
+| 0.911274 | 0.822917 | 0.790000  | 0.911274  |
 
 # 6 Conclusions 
 
