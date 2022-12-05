@@ -115,7 +115,7 @@ We employed LinearRegression from the sklearn.linear_model library to implement 
 |----------|----------|-----------|
 | 0.965784 | 0.944465 | 0.677143  |
 
-##Random Forest
+## Random Forest
 
 ![Confusion Matrix](images/RF_Matrix.png)
 
@@ -123,7 +123,7 @@ We employed LinearRegression from the sklearn.linear_model library to implement 
 |----------|----------|-----------|
 | 0.999508 | 0.852941 | 0.870000  |
 
-##Neural Network
+## Neural Network
 
 ![Confusion Matrix](images/NN_Matrix.png)
 
@@ -131,7 +131,7 @@ We employed LinearRegression from the sklearn.linear_model library to implement 
 |----------|----------|-----------|
 | 0.971683 | 0.907407 | 0.809524  |
 
-##SVM
+## SVM
 
 ![Confusion Matrix](images/SVM_Matrix.png)
 
