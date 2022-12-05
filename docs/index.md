@@ -172,6 +172,17 @@ SVM was the least successful in classifying fraudulent transactions as such, wit
 
 # 6 Conclusions 
 
+|  Model   | Accuracy | Recall   | Precision |  AUC-ROC  |
+|----------|----------|----------|-----------|-----------|
+| Logistic | 0.991170 | 0.965630 | 0.771072  | 0.965630  |
+| w/ Smote |          |          |           |           |
+|----------|----------|----------|-----------|-----------|
+| R-Forest | 0.999508 | 0.852941 | 0.870000  |  0.918129 |
+|----------|----------|----------|-----------|-----------|
+|  MLP NN  | 0.971683 | 0.907407 | 0.809524  |           |
+|----------|----------|----------|-----------|-----------|
+|   SVM    | 0.999333 | 0.822917 | 0.790000  | 0.911274  |
+
 As expected, with an imbalanced dataset such as ours, resampling techniques applied to rebalance training data increased the efficacy of our models, although this pre-processing seemed to largely decrease precision scores - signalling more false positives than without. 
 
 We found that Random Forest, SVM, and our MLP Neural Network, while decently effective, did not perform as well as the Logistic Regression model. While they generally had higher precision ratings than logistic regression, their recall scores left a lot to be desired, with our neural network only barely surpassing a recall of 90%. 
