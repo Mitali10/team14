@@ -108,7 +108,7 @@ AUC-ROC, overall, tells us how well the model can distinguish between classes on
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.991170 | 0.965630 | 0.771072  | 0.991170  |
+| 0.991170 | 0.965630 | 0.771072  | 0.965630  |
 
 ### Logistic Regression with CV and SMOTE:
 
@@ -116,7 +116,7 @@ AUC-ROC, overall, tells us how well the model can distinguish between classes on
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.991837 | 0.918382 | 0.727601  | 0.991837  |
+| 0.991837 | 0.918382 | 0.727601  | 0.918382  |
 
 ### Logistic Regression with Undersampling:
 
@@ -134,9 +134,7 @@ AUC-ROC, overall, tells us how well the model can distinguish between classes on
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.965784 | 0.944465 | 0.677143  | 0.965784  | 
-
-Our logistic regression model appears to produce the best results when paired with SMOTE undersampling techniques. For our dataset, recall is incredibly important as it quantifies the proportion of fraudulent transactions that were detected. Logistic Regression with SMOTE produced the highest recall score, while also maintaining an accuracy score of above 99%. 
+| 0.965784 | 0.944465 | 0.677143  | 0.944465  | 
 
 ## Random Forest
 
@@ -144,7 +142,7 @@ Our logistic regression model appears to produce the best results when paired wi
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.999508 | 0.852941 | 0.870000  |  0.918129 |
+| 0.999508 | 0.852941 | 0.870000  |  0.852941 |
 
 Our Random Forest model produced a decent recall score - though not nearly as good as with linear regression - while maintaining an accuracy score of well over 99%. The high AUC-ROC score indicates that our model distinguishes well between the two classes - those being fraudulent and authentic transactions.
 
