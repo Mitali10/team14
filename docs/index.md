@@ -162,7 +162,7 @@ Our MLP Neural Network produced a recall of over 90% - most of the fraudulent tr
 
 ## 5.4 SVM
 
-SVM was generally unsuccessful in detecting over two-thirds of the fraudulent transactions. Although the accuracy is very high, this is irrelevant with an imbalanced dataset such as ours. SVM classified the vast majority of datapoints as authentic transactions which plummeted the recall score.
+SVM was generally unsuccessful in detecting over two-thirds of the fraudulent transactions. Although the accuracy is very high, it's underwhelming in the context of an imbalanced dataset such as ours. SVM classified the vast majority of datapoints as authentic transactions which bolstered accuracy but plummeted the recall score.
 
 ![Confusion Matrix](images/SVM_Matrix.png)
 
