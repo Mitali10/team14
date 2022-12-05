@@ -117,17 +117,27 @@ We employed LinearRegression from the sklearn.linear_model library to implement 
 
 ##Random Forest
 
+![Confusion Matrix](images/RF_Matrix.png)
+
 | Accuracy | Recall   | Precision |
 |----------|----------|-----------|
-| 0.926356 | 0.999736 | 0.999771  |
+| 0.999508 | 0.852941 | 0.870000  |
 
 ##Neural Network
 
+![Confusion Matrix](images/NN_Matrix.png)
+
 | Accuracy | Recall   | Precision |
 |----------|----------|-----------|
-| 0.907407 | 0.999819 | 0.971805  |
+| 0.971683 | 0.907407 | 0.809524  |
 
 ##SVM
+
+![Confusion Matrix](images/SVM_Matrix.png)
+
+| Accuracy | Recall   | Precision |
+|----------|----------|-----------|
+| 0.998525 | 0.326531 | 0.640000  |
 
 # Contribution Table
 ![Contribution Table](images/contrib.png)
