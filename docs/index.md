@@ -190,17 +190,11 @@ Based on our assessment that recall alongside accuracy would be the most relevan
 ## 7.1 Contribution Table
 ![Contribution Table](images/contrib.PNG)
 
-_Note: Person(s) in parenthesis are supporters, to help with research, ideas, and issues. Person(s) outside of parenthesis are hold main responsibilities for code implementation._
+## 7.2 Final Project Video 
 
-## 7.2 Gantt Chart
-
-[Please visit this link](https://docs.google.com/spreadsheets/d/1po2iJ1vFaG1CmB4J_Djwdk4p0TJhpWTq/edit?usp=sharing&ouid=108835189571718457513&rtpof=true&sd=true)
-
-## 7.3 Project Proposal Video
+## 7.3 (OLD) Project Proposal Video
 
 [Please visit this link to view the video.](https://drive.google.com/file/d/1r7rxllHFUsLnQqLfOq9kNSNOA2zKj3Yu/view?usp=sharing) [You can also visit this link to see our slides!](https://docs.google.com/presentation/d/1XgGfCcNP65d0k5lsMeJvIVTUFTnzbxMga3VwtFhcM-E/edit?usp=sharing)
-
-## 7.4 Final Project Video 
 
 # 8 References 
 
