@@ -186,7 +186,7 @@ We were able to tune the oversampling ratio (for SMOTE) and type of kernel and o
 | Logistic w/ Smote  | 0.991170 | 0.965630 | 0.771072  | 0.965630  |
 | Random Forest w/ Smote| 0.999508 | 0.852941 | 0.870000  |  0.918129 |
 |  MLP NN w/ Smote | 0.99949  | 0.83017658     | 0.8736842  |  0.9148944 |
-|   SVM  w/ Smote  | | 0.999333 | 0.915578 | 0.790000  | 0.911274  |
+|   SVM  w/ Smote  | 0.99949  | 0.83017658 | 0.8736842  |  0.9148944 |
 
 As expected, with an imbalanced dataset such as ours, resampling techniques applied to rebalance training data increased the efficacy of our models, although this pre-processing seemed to largely decrease precision scores - signalling more false positives than without. 
 
