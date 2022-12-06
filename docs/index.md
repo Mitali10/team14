@@ -152,13 +152,13 @@ Our Random Forest model produced a decent recall score - though not nearly as go
 
 ## 5.3 MLP Neural Network
 
-Our MLP Neural Network produced a recall of over 90% - most of the fraudulent transactions were properly labeled - while still having an accuracy score of around 97%. The precision score is relatively lackluster - only about 80% of the transactions labeled as fraudulent were in-fact fraudulent.
+Our MLP Neural Network produced a recall of over 83% - most of the fraudulent transactions were properly labeled - while still having an accuracy score of around over 99%. The precision score is relatively lackluster - only about 87% of the transactions labeled as fraudulent were in-fact fraudulent.
 
 ![Confusion Matrix](images/NN_Matrix.png)
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.99949  | 0.83     | 0.8736842  |  0.9148944 |
+| 0.99949  | 0.83017658     | 0.8736842  |  0.9148944 |
 
 ## 5.4 SVM
 
@@ -175,9 +175,9 @@ SVM was the least successful in classifying fraudulent transactions as such, wit
 |  Model   | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|----------|-----------|-----------|
 | Logistic w/ Smote  | 0.991170 | 0.965630 | 0.771072  | 0.965630  |
-| Random Forest | 0.999508 | 0.852941 | 0.870000  |  0.918129 |
-|  MLP NN  | 0.971683 | 0.907407 | 0.809524  |  0.891638 |
-|   SVM    | 0.999333 | 0.822917 | 0.790000  | 0.911274  |
+| Random Forest w/ Smote| 0.999508 | 0.852941 | 0.870000  |  0.918129 |
+|  MLP NN w/ Smote | 0.99949  | 0.83017658     | 0.8736842  |  0.9148944 |
+|   SVM  w/ Smote  | 0.999333 | 0.822917 | 0.790000  | 0.911274  |
 
 As expected, with an imbalanced dataset such as ours, resampling techniques applied to rebalance training data increased the efficacy of our models, although this pre-processing seemed to largely decrease precision scores - signalling more false positives than without. 
 
