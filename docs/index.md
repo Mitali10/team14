@@ -144,6 +144,10 @@ Without pre-processing, we appeared to produce the highest precision scores of a
 
 Our Random Forest model produced a decent recall score - though not nearly as good as with linear regression - while maintaining an accuracy score of well over 99%. The high AUC-ROC score indicates that our model distinguishes well between the two classes - those being fraudulent and authentic transactions. 
 
+![RF Depth](images/RFDepth.png)
+
+We also tuned the depth of the tree. Analysis revealed that the performance of the random forest increased with depth, likely because the greater depth allowed better analysis of the high-dimensional data. When the max depth exceeded 20 features, training time exceeded 10 minutes, and further turning became difficult. With greater computer power, we would continue analysis until increasing the max depth decreased performance.
+
 ![Confusion Matrix](images/RF_Matrix.png)
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
