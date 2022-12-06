@@ -190,7 +190,7 @@ We were able to tune the oversampling ratio (for SMOTE) and type of kernel and o
 
 As expected, with an imbalanced dataset such as ours, resampling techniques applied to rebalance training data increased the efficacy of our models, although this pre-processing seemed to largely decrease precision scores - signalling more false positives than without. 
 
-We found that Random Forest, SVM, and our MLP Neural Network, while decently effective, did not perform as well as the Logistic Regression model. While they generally had higher precision ratings than logistic regression, their recall scores left a lot to be desired, with our neural network only barely surpassing a recall of 90%. 
+We found that Random Forest and our MLP Neural Network, while decently effective, did not perform as well as the Logistic Regression and SVM model. Our SVM model has a higher precision, while the Logistic Regression model outperformed SVM in recall. While the others generally had higher precision ratings than logistic regression, their recall scores left a lot to be desired, with our neural network only barely surpassing a recall of 83%. 
 
 Based on our assessment that recall alongside accuracy would be the most relevant parameters in evaluating our models, Logistic Regression appeared to be the most successful model in identifying fraudulent data - especially when paired with SMOTE. Our model had a recall score of .965 while maintaining an accuracy of .992, meaning we only missed around 3% of fraudulent transactions while still classifying the vast majority of datapoints properly. 
 
