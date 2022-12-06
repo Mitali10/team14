@@ -166,20 +166,18 @@ After tuning with the hidden layer sizes, our MLP Neural Network produced a reca
 
 ## 5.4 SVM
 
-SVM was the least successful in classifying fraudulent transactions as such, with a recall of around 82%. 
+SVM was the largely successful in classifying fraudulent transactions as such, with a recall of around 91% and accuracy of around 99%. 
 
 We were able to tune the oversampling ratio (for SMOTE) and type of kernel and optimize the precision with a minority: majority ratio of 0.046 and a linear SVM. As you can see below, the precision increases, peaks at 0.046 and then sharply declines after. We also tried using a non linear sigmoid kernel but our precision dropped a lot and it also took considerably more runtime. 
 
 ![Sampling Ratio](images/SamplingRatio.png)
 
 
-
-
 ![Confusion Matrix](images/SVM_Matrix.png)
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.999333 | 0.822917 | 0.790000  | 0.911274  |
+| 0.999333 | 0.915578 | 0.790000  | 0.911274  |
 
 # 6 Conclusions 
 
