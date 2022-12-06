@@ -188,7 +188,7 @@ Based on our assessment that recall alongside accuracy would be the most relevan
 # 7 Process Documents
 
 ## 7.1 Contribution Table
-![Contribution Table](images/contrib.png)
+![Contribution Table](images/contrib.PNG)
 
 _Note: Person(s) in parenthesis are supporters, to help with research, ideas, and issues. Person(s) outside of parenthesis are hold main responsibilities for code implementation._
 
