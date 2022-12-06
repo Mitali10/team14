@@ -164,6 +164,8 @@ After tuning with the hidden layer sizes, our MLP Neural Network produced a reca
 
 SVM was the least successful in classifying fraudulent transactions as such, with a recall of around 82%. 
 
+![Sampling Ratio](images/SamplingRatio.png)
+
 After tuning the oversampling ratio and kernel, we were able to get the best accuracy and recall balance with a minority: majority ratio of 0.01 and a linear SVM.
 
 
