@@ -168,7 +168,7 @@ After tuning with the hidden layer sizes, our MLP Neural Network produced a reca
 
 SVM was the least successful in classifying fraudulent transactions as such, with a recall of around 82%. 
 
-We were able to tune the oversampling ratio (for SMOTE) and type of kernel and optimize the precision with a minority: majority ratio of 0.046 and a linear SVM. As you can see below, the precision increases, peaks at 0.046 and then sharply declines after. We also tried using a non linear sigmoid kernel, our precision dropped a lot and it also took considerably more runtime. 
+We were able to tune the oversampling ratio (for SMOTE) and type of kernel and optimize the precision with a minority: majority ratio of 0.046 and a linear SVM. As you can see below, the precision increases, peaks at 0.046 and then sharply declines after. We also tried using a non linear sigmoid kernel but our precision dropped a lot and it also took considerably more runtime. 
 
 ![Sampling Ratio](images/SamplingRatio.png)
 
