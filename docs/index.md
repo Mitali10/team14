@@ -158,7 +158,7 @@ Our MLP Neural Network produced a recall of over 90% - most of the fraudulent tr
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.971683 | 0.907407 | 0.809524  |  0.891638 |
+| 0.99949  | 0.83     | 0.8736842  |  0.9148944 |
 
 ## 5.4 SVM
 
