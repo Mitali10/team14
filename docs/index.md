@@ -57,15 +57,15 @@ We used RandomForestClassifier from the sklearn.ensemble library for this method
 
 ## 4.5 Neural Network:
 
-We chose to attempt implementing a Neural Network for this problem in order to find a high accuracy predictor of credit card fraud. 
+We chose to attempt implementing a Neural Network for this problem in order to find a high accuracy predictor of credit card fraud. We used an MLP Neural Nework with an input layer of 30, three hidden layers of sizes 50, 200, 200 and 50, with an output layer giving us the prediction for any given datapoint.
 
-We used an MLP Neural Nework with an input layer, three hidden layers of sizes 50, 200, and 50, with an output layer giving us the prediction for any given datapoint. 
+We tuned the hyperparameters of the neural network with sklearn's GridSearchCV, which performs an exhaustive search over the input hyperparameters. We tested the network with hidden layers of sizes (50,200,50), (150,100,50), (120,80,40), (100,50,30), and (50, 200, 200, 50) and found that the largest and deepest network outperformed the smaller ones. We suspect the complexity of the network enabled better feature analysis of the 30 input dimensions.
 
 ## 4.6 SVM:
 
-The support vector machine algorithm (SVM) is incredibly useful when working with datasets with many features, such as ours. This algorithm generally works well without needing to do a lot of transformations on our dataset. One downside is that this algorithm can take a long time to run with a dataset as large as this one.
+The support vector machine algorithm (SVM) is incredibly useful when working with datasets with many features, such as ours. This algorithm generally works well without needing to do a lot of transformations on our dataset. SVM is typically very successful in application areas ranging from image retrieval, handwriting recognition to text classification. However, when faced with imbalanced datasets where the number of negative instances far outnumbers the positive, the performance of SVM drops significantly. Classifiers generally perform poorly on imbalanced datasets because they are designed to generalize from sample data and output the simplest hypothesis that best fits the data, based on the principle of Occam’s razor. Hence, we didn't anticipate a high recall or precision and took some time optimizing the implementations and tuning the parameters. Another downside is that this algorithm can take a long time to run with a dataset as large as this one instances. 
 
-We used svm from sklearn in order to implement SVM. We also utilized StratifiedShuffleSplit from sklearn.model_selection in order to partition the dataset. 
+We used the linear_model library in sklearn in order to implement SVM. We implemented a linear SVM using a Stochastic Gradient Descent Classifier with loss function as 'hinge'. We put this through a pipeline, along with standard scaling and fit it using undersampled training data with SMOTE. 
 
 
 # 5 Results
