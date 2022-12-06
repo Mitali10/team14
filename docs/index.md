@@ -3,7 +3,7 @@ title: Final Report
 ---
 
 # 1 Introduction & Background
-This is an increasing problem around the globe. Financial Fraud Action UK, for example, a trade association for UK financial services reported that losses from fraud totaled 618 million pounds which is a 9% increase from the year before. Additionally, this contributed to the fifth consecutive year of increased credit card fraud.
+Credit card fraud is an increasing problem around the globe. Financial Fraud Action UK, for example, a trade association for UK financial services reported that losses from fraud totaled 618 million pounds which is a 9% increase from the year before. Additionally, this contributed to the fifth consecutive year of increased credit card fraud.
 
 [Credit card fraud detection is an active area of research](https://fraud-detection-handbook.github.io/fraud-detection-handbook/Foreword.html#): existing analyses of credit card fraud have included techniques including deep learning, correlation matrices, and confusion matrices. We noted some potential complexities to credit card fraud data from our literature review: few fraudulent entries, no null values, and high false positive or high false negative rate.
 
@@ -57,15 +57,15 @@ We used RandomForestClassifier from the sklearn.ensemble library for this method
 
 ## 4.5 Neural Network:
 
-We chose to attempt implementing a Neural Network for this problem in order to find a high accuracy predictor of credit card fraud. 
+We chose to attempt implementing a Neural Network for this problem in order to find a high accuracy predictor of credit card fraud. We used an MLP Neural Nework with an input layer of 30, three hidden layers of sizes 50, 200, 200 and 50, with an output layer giving us the prediction for any given datapoint.
 
-We used an MLP Neural Nework with an input layer, three hidden layers of sizes 50, 200, and 50, with an output layer giving us the prediction for any given datapoint. 
+We tuned the hyperparameters of the neural network with sklearn's GridSearchCV, which performs an exhaustive search over the input hyperparameters. We tested the network with hidden layers of sizes (50,200,50), (150,100,50), (120,80,40), (100,50,30), and (50, 200, 200, 50) and found that the largest and deepest network outperformed the smaller ones. We suspect the complexity of the network enabled better feature analysis of the 30 input dimensions.
 
 ## 4.6 SVM:
 
-The support vector machine algorithm (SVM) is incredibly useful when working with datasets with many features, such as ours. This algorithm generally works well without needing to do a lot of transformations on our dataset. One downside is that this algorithm can take a long time to run with a dataset as large as this one.
+The support vector machine algorithm (SVM) is incredibly useful when working with datasets with many features, such as ours. This algorithm generally works well without needing to do a lot of transformations on our dataset. SVM is typically very successful in application areas ranging from image retrieval, handwriting recognition to text classification. However, when faced with imbalanced datasets where the number of negative instances far outnumbers the positive, the performance of SVM drops significantly. Classifiers generally perform poorly on imbalanced datasets because they are designed to generalize from sample data and output the simplest hypothesis that best fits the data, based on the principle of Occam’s razor. Hence, we didn't anticipate a high recall or precision and took some time optimizing the implementations and tuning the parameters. Another downside is that this algorithm can take a long time to run with a dataset as large as this one instances. 
 
-We used svm from sklearn in order to implement SVM. We also utilized StratifiedShuffleSplit from sklearn.model_selection in order to partition the dataset. 
+We used the linear_model library in sklearn in order to implement SVM. We implemented a linear SVM using a Stochastic Gradient Descent Classifier with loss function as 'hinge'. We put this through a pipeline, along with standard scaling and fit it using undersampled training data with SMOTE. 
 
 
 # 5 Results
@@ -152,13 +152,13 @@ Our Random Forest model produced a decent recall score - though not nearly as go
 
 ## 5.3 MLP Neural Network
 
-Our MLP Neural Network produced a recall of over 90% - most of the fraudulent transactions were properly labeled - while still having an accuracy score of around 97%. The precision score is relatively lackluster - only about 80% of the transactions labeled as fraudulent were in-fact fraudulent.
+After tuning with the hidden layer sizes, our MLP Neural Network produced a recall of over 83% - most of the fraudulent transactions were properly labeled - while still having an accuracy score of around over 99%. The precision score is pretty decent with about 87% of the transactions labeled as fraudulent were in-fact fraudulent.
 
 ![Confusion Matrix](images/NN_Matrix.png)
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.971683 | 0.907407 | 0.809524  |
+| 0.99949  | 0.83017658 | 0.8736842  |  0.9148944 |
 
 ## 5.4 SVM
 
@@ -175,9 +175,9 @@ SVM was the least successful in classifying fraudulent transactions as such, wit
 |  Model   | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|----------|-----------|-----------|
 | Logistic w/ Smote  | 0.991170 | 0.965630 | 0.771072  | 0.965630  |
-| R-Forest | 0.999508 | 0.852941 | 0.870000  |  0.918129 |
-|  MLP NN  | 0.971683 | 0.907407 | 0.809524  |           |
-|   SVM    | 0.999333 | 0.822917 | 0.790000  | 0.911274  |
+| Random Forest w/ Smote| 0.999508 | 0.852941 | 0.870000  |  0.918129 |
+|  MLP NN w/ Smote | 0.99949  | 0.83017658     | 0.8736842  |  0.9148944 |
+|   SVM  w/ Smote  | 0.999333 | 0.822917 | 0.790000  | 0.911274  |
 
 As expected, with an imbalanced dataset such as ours, resampling techniques applied to rebalance training data increased the efficacy of our models, although this pre-processing seemed to largely decrease precision scores - signalling more false positives than without. 
 
@@ -188,19 +188,13 @@ Based on our assessment that recall alongside accuracy would be the most relevan
 # 7 Process Documents
 
 ## 7.1 Contribution Table
-![Contribution Table](images/contrib.png)
+![Contribution Table](images/contrib.PNG)
 
-_Note: Person(s) in parenthesis are supporters, to help with research, ideas, and issues. Person(s) outside of parenthesis are hold main responsibilities for code implementation._
+## 7.2 Final Project Video 
 
-## 7.2 Gantt Chart
-
-[Please visit this link](https://docs.google.com/spreadsheets/d/1po2iJ1vFaG1CmB4J_Djwdk4p0TJhpWTq/edit?usp=sharing&ouid=108835189571718457513&rtpof=true&sd=true)
-
-## 7.3 Project Proposal Video
+## 7.3 (OLD) Project Proposal Video
 
 [Please visit this link to view the video.](https://drive.google.com/file/d/1r7rxllHFUsLnQqLfOq9kNSNOA2zKj3Yu/view?usp=sharing) [You can also visit this link to see our slides!](https://docs.google.com/presentation/d/1XgGfCcNP65d0k5lsMeJvIVTUFTnzbxMga3VwtFhcM-E/edit?usp=sharing)
-
-## 7.4 Final Project Video 
 
 # 8 References 
 
