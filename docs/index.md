@@ -152,13 +152,13 @@ Our Random Forest model produced a decent recall score - though not nearly as go
 
 ## 5.3 MLP Neural Network
 
-Our MLP Neural Network produced a recall of over 83% - most of the fraudulent transactions were properly labeled - while still having an accuracy score of around over 99%. The precision score is relatively lackluster - only about 87% of the transactions labeled as fraudulent were in-fact fraudulent.
+After tuning with the hidden layer sizes, our MLP Neural Network produced a recall of over 83% - most of the fraudulent transactions were properly labeled - while still having an accuracy score of around over 99%. The precision score is pretty decent with about 87% of the transactions labeled as fraudulent were in-fact fraudulent.
 
 ![Confusion Matrix](images/NN_Matrix.png)
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.99949  | 0.83017658     | 0.8736842  |  0.9148944 |
+| 0.99949  | 0.83017658 | 0.8736842  |  0.9148944 |
 
 ## 5.4 SVM
 
