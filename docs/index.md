@@ -41,7 +41,7 @@ Our data reflects a majority: minority ratio of 227451: 394. For resampling tech
 
 ![Undersample](images/undersample.png)
 
-We also tried employing a combination of undersampling and oversampling to balance the distortion caused in minority class if we overpopulated it too far. For this we used RandomUnderSampler from the imblearn undersampling library. We were inspired by the approach of this article: https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification. 
+We also tried employing a combination of undersampling and oversampling to balance the distortion caused in minority class if we overpopulated it too far. For this we used RandomUnderSampler from the imblearn undersampling library.
 
 ## 4.3 Logistic Regression: 
 
