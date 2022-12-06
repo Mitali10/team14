@@ -158,7 +158,7 @@ Our MLP Neural Network produced a recall of over 90% - most of the fraudulent tr
 
 | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|-----------|-----------|
-| 0.971683 | 0.907407 | 0.809524  |
+| 0.971683 | 0.907407 | 0.809524  |  0.891638 |
 
 ## 5.4 SVM
 
@@ -176,7 +176,7 @@ SVM was the least successful in classifying fraudulent transactions as such, wit
 |----------|----------|----------|-----------|-----------|
 | Logistic w/ Smote  | 0.991170 | 0.965630 | 0.771072  | 0.965630  |
 | R-Forest | 0.999508 | 0.852941 | 0.870000  |  0.918129 |
-|  MLP NN  | 0.971683 | 0.907407 | 0.809524  |           |
+|  MLP NN  | 0.971683 | 0.907407 | 0.809524  |  0.891638 |
 |   SVM    | 0.999333 | 0.822917 | 0.790000  | 0.911274  |
 
 As expected, with an imbalanced dataset such as ours, resampling techniques applied to rebalance training data increased the efficacy of our models, although this pre-processing seemed to largely decrease precision scores - signalling more false positives than without. 
