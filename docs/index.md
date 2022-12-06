@@ -175,7 +175,7 @@ SVM was the least successful in classifying fraudulent transactions as such, wit
 |  Model   | Accuracy | Recall   | Precision |  AUC-ROC  |
 |----------|----------|----------|-----------|-----------|
 | Logistic w/ Smote  | 0.991170 | 0.965630 | 0.771072  | 0.965630  |
-| R-Forest | 0.999508 | 0.852941 | 0.870000  |  0.918129 |
+| Random Forest | 0.999508 | 0.852941 | 0.870000  |  0.918129 |
 |  MLP NN  | 0.971683 | 0.907407 | 0.809524  |  0.891638 |
 |   SVM    | 0.999333 | 0.822917 | 0.790000  | 0.911274  |
 
