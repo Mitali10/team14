@@ -162,7 +162,10 @@ After tuning with the hidden layer sizes, our MLP Neural Network produced a reca
 
 ## 5.4 SVM
 
-SVM was the least successful in classifying fraudulent transactions as such, with a recall of around 82%. Although the accuracy is very high, it's underwhelming in the context of an imbalanced dataset such as ours. The precision was also unimpressive when paired with the lackluster recall score. 
+SVM was the least successful in classifying fraudulent transactions as such, with a recall of around 82%. 
+
+After tuning the oversampling ratio and kernel, we were able to get the best accuracy and recall balance with a minority: majority ratio of 0.01 and a linear SVM.
+
 
 ![Confusion Matrix](images/SVM_Matrix.png)
 
