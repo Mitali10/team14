@@ -199,11 +199,12 @@ Based on our assessment that recall alongside accuracy would be the most relevan
 ## 7.1 Contribution Table
 ![Contribution Table](images/contrib.PNG)
 
-## 7.2 Final Project Video 
 
-## 7.3 (OLD) Project Proposal Video
-
+## 7.2 Project Proposal Video
 [Please visit this link to view the video.](https://drive.google.com/file/d/1r7rxllHFUsLnQqLfOq9kNSNOA2zKj3Yu/view?usp=sharing) [You can also visit this link to see our slides!](https://docs.google.com/presentation/d/1XgGfCcNP65d0k5lsMeJvIVTUFTnzbxMga3VwtFhcM-E/edit?usp=sharing)
+
+## 7.3 Final Project Video 
+[Please visit this link to view the video.](https://drive.google.com/file/d/1ie1aZhr8KDyZRuLQqVKcKvbs6eeUVDUo/view?usp=share_link) [You can also visit this link to see our slides!](https://docs.google.com/presentation/d/15fv2r3vmxhtS3pyWrX_OcYojZgmACOQlN7_xOUXv7XA/edit?usp=sharing)
 
 # 8 References 
 
